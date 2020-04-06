@@ -1,15 +1,46 @@
 ### The Pitch
 FIll in the blanks as they come to you.
-- **App Title**: Lost Tourist (tentative)
-- **App Description**: Will look up directions to a user-entered location from the MapQuest directions API, translate them from english to japanese to french to icelandic then back into english using the Yandex translate API, then will read them in a Norwegian accent using the Responsive Voice API.
-- **API**: 
+- **App Title**: Breaking Bad Quote ID
+- **App Description**: Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user guesses 5 correctly, they win. If user guesses 5 incorrectly, they lose.
+- **API**: https://breakingbadapi.com/documentation
 - **API Snippet**: 
-- **Wireframes**:  
-- **MVP**: 
-- **Post-MVP**: 
-- **Goals**: 
-- **Priority Matrix**: 
-- **Timeframes**: 
+
+Quote: 
+[
+    {
+        "quote_id": 78,
+        "quote": "You know how they say, 'It's been a pleasure?' It hasn't.",
+        "author": "Mike Ehrmantraut",
+        "series": "Breaking Bad"
+    }
+]
+    
+Character: 
+[
+    {
+        "char_id": 1,
+        "name": "Walter White",
+        "birthday": "09-07-1958",
+        "occupation": [
+            "High School Chemistry Teacher",
+            "Meth King Pin"
+        ],
+        "img": "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
+        "status": "Presumed dead",
+        "nickname": "Heisenberg",
+        "appearance": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "portrayed": "Bryan Cranston",
+        "category": "Breaking Bad",
+        "better_call_saul_appearance": []
+    }
+]
+
 
 ### Make a New Repo
 Done - will edit repo title.
