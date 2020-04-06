@@ -57,7 +57,16 @@ Character:
 | HTML          | 2 hrs | 
 | CSS           | 4 hrs |   
 | Display quote | 4 hrs |  
-| Display images | 4 hrs |
+| Display correct answer image | 4 hrs |
+| Display Random Character Images | 4 Hours |
+| Scoring system | 3 hours |
+| Reset button | 2 hours | 
+| Win / Loss states | 2 Hours |
+| Quote repetition prevention | 4 hours |
+| Bug hunting | 3 hours |
+
+Total Time Estimate: 32 Hours
+
 
 
 
@@ -66,4 +75,4 @@ Character:
 
 1) Sound effects and music pulled from the show
 2) Video intro
-3) More to be added
+3) Share score buttons
