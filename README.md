@@ -58,11 +58,11 @@ Character:
 | CSS           | 4 hrs |   
 | Display quote | 4 hrs |  
 | Display correct answer image + character name | 4 hrs |
-| Display random charaxcter images + character names | 4 hrs |
+| Display random character images + character names | 4 hrs |
 | Scoring system | 3 hrs |
 | Reset button | 2 hrs | 
 | Win / Loss states | 2 hrs |
-| Quote repetition prevention | 4 hrs |
+| Repetition prevention | 4 hrs |
 | Bug hunting | 3 hrs |
 
 Total Time Estimate: 32 hours
