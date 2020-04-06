@@ -73,7 +73,7 @@ Total Time Estimate: 36 hours
 * Day 2) Get quotes and images displaying correctly, start click functionality 
 * Day 3) Get click, tally, and win / loss functionality working
 * Day 4) Reset button and repetition prevention
-* Day 5, 6, 7) Bud hunting and polish
+* Day 5, 6, 7) Bug hunting and polish
 
 
 ### Priority Matrix
