@@ -3,7 +3,8 @@ Shows a quote from Breaking Bad, and presents 3 character photos for user to sel
 - **API**: https://breakingbadapi.com/documentation
 - **API Snippet**: 
 
-```Quote: 
+```
+Quote: 
 [
     {
         "quote_id": 78,
@@ -37,7 +38,8 @@ Character:
         "category": "Breaking Bad",
         "better_call_saul_appearance": []
     }
-]```
+]
+```
 
 
 ### MVP
