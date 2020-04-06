@@ -76,3 +76,4 @@ Total Time Estimate: 32 hours
 1) Sound effects and music pulled from the show
 2) Video intro
 3) Share score buttons
+4) Countdown clock
