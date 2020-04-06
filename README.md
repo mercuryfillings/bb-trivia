@@ -75,6 +75,10 @@ Day 3) Get click, tally, and win / loss functionality working
 Day 4) Reset button and repetition prevention
 Day 5, 6, 7) Bud hunting and polish
 
+### Priority Matrix
+
+https://notebooks.gesis.org/binder/jupyter/user/ipython-ipython-in-depth-gyqih7tz/notebooks/binder/Priorities%20Matrix.ipynb#
+
 
 
 
