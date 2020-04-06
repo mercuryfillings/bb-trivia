@@ -52,7 +52,30 @@ Character:
 
 **Wireframe:** https://wireframe.cc/DSETuV
 
-#### Your application must meet these requirements:
+| Task          | Time Estimate | 
+| ------------- |:-------------:|
+| HTML          | 2 hrs | 
+| CSS           | 4 hrs |   
+| Display quote | 4 hrs |  
+| Display correct answer image + character name | 4 hrs |
+| Display random character images + character names | 4 hrs |
+| Play actions / score tally | 4 hrs |
+| Scoring system | 3 hrs |
+| Reset button | 2 hrs | 
+| Win / Loss states | 2 hrs |
+| Repetition prevention | 4 hrs |
+| Bug hunting | 3 hrs |
+
+Total Time Estimate: 36 hours
+
+### Goals
+Day 1) Build out the html and CSS to display the game, test basic API functionality with console logs
+Day 2) Get quotes and images displaying correctly, start click functionality 
+Day 3) Get click, tally, and win / loss functionality working
+Day 4) Reset button and repetition prevention
+Day 5, 6, 7) Bud hunting and polish
+
+
 
 
 
@@ -60,4 +83,6 @@ Character:
 
 1) Sound effects and music pulled from the show
 2) Video intro
-3) More to be added
+3) Share score buttons
+4) Countdown clock
+5) Endless mode - 1 wrong stops game, see if you can get a streak.
