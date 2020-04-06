@@ -57,8 +57,8 @@ Character:
 | HTML          | 2 hrs | 
 | CSS           | 4 hrs |   
 | Display quote | 4 hrs |  
-| Display correct answer image | 4 hrs |
-| Display Random Character Images | 4 hrs |
+| Display correct answer image + character name | 4 hrs |
+| Display random charaxcter images + character names | 4 hrs |
 | Scoring system | 3 hrs |
 | Reset button | 2 hrs | 
 | Win / Loss states | 2 hrs |
