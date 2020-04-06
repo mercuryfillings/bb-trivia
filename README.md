@@ -1,6 +1,4 @@
-### The Pitch
-FIll in the blanks as they come to you.
-- **App Title**: Breaking Bad Quote ID
+- **App Title**: Breaking Bad Quote Trivia
 - **App Description**: Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user guesses 5 correctly, they win. If user guesses 5 incorrectly, they lose.
 - **API**: https://breakingbadapi.com/documentation
 - **API Snippet**: 
@@ -42,10 +40,15 @@ Character:
 ]
 
 
-### Make a New Repo
-Done - will edit repo title.
+### MVP
 
-### Build Your Project MVP — Mandatory To Pass
+1) Must pull quotes from the API's quote data, associate the quote's author attribute with the character profile, and display quote to DOM. 
+2) Must pull image of the correct character, plus images from two random characters, and list them on the page in a random order.
+3) Must inform user of correct & incorrect guesses upon click, and display a running tally.
+4) Must inform player of win or loss.
+5) Must include functional reset or play again button.
+
+**Wireframe:** https://wireframe.cc/DSETuV
 
 #### Your application must meet these requirements:
 
