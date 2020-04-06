@@ -76,7 +76,9 @@ Day 4) Reset button and repetition prevention
 Day 5, 6, 7) Bud hunting and polish
 
 
+### Priority Matrix
 
+https://git.generalassemb.ly/mercuryfillings/breaking-bad-quote-game/blob/master/Priority%20Matrix.png
 
 
 
