@@ -1,9 +1,9 @@
-- **App Title**: Breaking Bad Quote Trivia
-- **App Description**: Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user guesses 5 correctly, they win. If user guesses 5 incorrectly, they lose.
+### Breaking Bad Quote Trivia
+Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user guesses 5 correctly, they win. If user guesses 5 incorrectly, they lose.
 - **API**: https://breakingbadapi.com/documentation
 - **API Snippet**: 
 
-Quote: 
+```Quote: 
 [
     {
         "quote_id": 78,
@@ -37,7 +37,7 @@ Character:
         "category": "Breaking Bad",
         "better_call_saul_appearance": []
     }
-]
+]```
 
 
 ### MVP
