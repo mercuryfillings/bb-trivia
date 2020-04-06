@@ -52,7 +52,13 @@ Character:
 
 **Wireframe:** https://wireframe.cc/DSETuV
 
-#### Your application must meet these requirements:
+| Task          | Time Estimate | 
+| ------------- |:-------------:|
+| HTML          | 2 hrs | 
+| CSS           | 4 hrs |   
+| Display quote | 4 hrs |  
+| Display images | 4 hrs |
+
 
 
 
