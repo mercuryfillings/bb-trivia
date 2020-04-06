@@ -77,3 +77,4 @@ Total Time Estimate: 32 hours
 2) Video intro
 3) Share score buttons
 4) Countdown clock
+5) Endless mode - 1 wrong stops game, see if you can get a streak.
