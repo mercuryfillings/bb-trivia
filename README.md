@@ -69,11 +69,11 @@ Character:
 Total Time Estimate: 36 hours
 
 ### Goals
-Day 1: Build out the html and CSS to display the game, test basic API functionality with console logs
-Day 2: Get quotes and images displaying correctly, start click functionality 
-Day 3: Get click, tally, and win / loss functionality working
-Day 4: Reset button and repetition prevention
-Day 5, 6, 7: Bud hunting and polish
+Day 1) Build out the html and CSS to display the game, test basic API functionality with console logs
+Day 2) Get quotes and images displaying correctly, start click functionality 
+Day 3) Get click, tally, and win / loss functionality working
+Day 4) Reset button and repetition prevention
+Day 5, 6, 7) Bud hunting and polish
 
 
 
