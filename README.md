@@ -1,5 +1,5 @@
 ### Breaking Bad Quote Trivia
-Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user guesses 5 correctly, they win. If user guesses 5 incorrectly, they lose.
+Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user answers 5 questions correctly, they win. If user answers 5 incorrectly, they lose.
 - **API**: https://breakingbadapi.com/documentation
 - **API Snippet**: 
 
@@ -54,12 +54,10 @@ Character:
 
 #### Your application must meet these requirements:
 
-  1. Built with HTML, CSS, and JavaScript.
-  1. Use Axios to make a request to an external data source and insert some of the retrieved data on to the DOM.
-  1. Fulfill the build requirements you have specified in your MVP.
-  1. Implement responsive design (i.e. it should be fully functional on desktop, tablet, mobile, etc), using at least one media query.
-  1. Deployed to a site hosting service like [surge.sh](https://surge.sh/).
-  1. Commits to GitHub every day.
-  1. A `README.md` file that contains your project worksheet, a link to your live, deployed site, and any necessary installation instructions such as ```npm i```.
 
-### STEP 5: &#x1F535; Ideas for Post-MVP - Not Mandatory
+
+### Ideas for Post-MVP
+
+1) Sound effects and music pulled from the show
+2) Video intro
+3) More to be added
