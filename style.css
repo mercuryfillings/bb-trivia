@@ -1,38 +1,52 @@
 body {
   background-color: white;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .gameinfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 20px;
 }
 
 .logo {
-  width: 80px;
+  width: 10em;
   height: auto;
   margin: 10px;
 }
 
 .instructions {
   margin: 10px 10px;
-  width: 300px;
+  width: 10em;
+  text-align: center;
 }
 
 .hud {
   display: flex;
-  flex-direction: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
   margin: 0 20px;
+}
+
+#lifecounter {
+  display: flex;
+  justify-content: center;
 }
 
 .lives {
   display: flex;
   flex-direction: row;
-  width: 200px;
   justify-content: center;
+  width: 200px;
 }
 
 .life {
@@ -49,5 +63,6 @@ header {
 .score {
   font-size: 50px;
   margin: 5px 10px;
+  text-align: center;
 }
 
