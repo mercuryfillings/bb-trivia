@@ -1,3 +1,40 @@
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  width: 10%;
+  height: 10%;
+}
+
+.instructions {
+  margin: 90px 10px;
+}
+
 body {
-  background-color: #204D17;
+  background-color: white;
+}
+
+.lifeimg {
+  width: 30px;
+  height: auto;
+}
+
+.lives {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: center;
+}
+
+.life {
+  display: flex;
+  justify-content: center;
+  padding: 10px 5px;
+}
+
+.score {
+  font-size: 50px;
+  margin: 5px 10px;
 }

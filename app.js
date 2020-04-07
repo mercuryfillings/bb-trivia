@@ -2,7 +2,7 @@ console.log('Working')
 const BASE_URL = `https://breakingbadapi.com/api/`
 
 //Full Pseudocode Instructions
-//1 - Write event listener for start game
+//1 - Write event listener for start game button (Add button w/ class 'start' to HTML)
 //2 - Write function for event listener that builds the 
 //API request for the first quote.
 //3 - Write function that pulls correct answer from characters
@@ -13,7 +13,7 @@ const BASE_URL = `https://breakingbadapi.com/api/`
 //7 - Write a function that checks for correctness of answer
 //8 - Write function that increments score or removes lives in correct / uncorrect scenarios
 //9 - Write a function that checks for win state
-//10 - Write a function that transitions to the next question
+//10 - Write a function that transitions to the next question (based on start game function - can this be DRY?)
 //11 - Write a function that transitions to win / loss states
 //12 - Write a callback function for answer selector at 6 that passes 7-11 in
 //13 - Write async function to pull data
