@@ -2,15 +2,22 @@ console.log('Working')
 const BASE_URL = `https://breakingbadapi.com/api/`;
 const QUOTE_URL = `quote/random`;
 const WRONG_ANSWER_URL = `character/random`;
+let CORRECT_URL = ``;
 
 //Full Pseudocode Instructions
 //1 - Write event listener for start game button (Add button w/ class 'start' to HTML)
-document.querySelector('button').addEventListener('click', handleClick);
+document.querySelector('button').addEventListener('click', onClick);
 //2 - Write function for event listener that builds the 
 //API request for the first quote.
-
+function onClick(e) {
+  e.preventDefault();
+  fetchQuote();
+  // fetchCorrectAnswer();
+}
 //3 - Write function that pulls correct answer from characters
+
 //4 - Write function that pulls random wrong answers from characters
+
 //Be sure to exlcude correct answer
 //5 - Write callback function that activates all 3 functions above and displays to DOM
 //6 - Write event listener for selecting answers
@@ -21,12 +28,29 @@ document.querySelector('button').addEventListener('click', handleClick);
 //11 - Write a function that transitions to win / loss states
 //12 - Write a callback function for answer selector at 6 that passes 7-11 in
 //13 - Write async function to pull data
+//14 - Write function to randomize position of answers
+//15 - Write function that changes start button to restart button
 async function fetchQuote() {
-  const response = await axios.get(BASE_URL + );
-  // console.log(response)
-  displayData(response);
+  const response = await axios.get(BASE_URL + QUOTE_URL);
+  console.log(response)
   // displayData(response);
 };
+
+// async function fetchCorrectAnswer() {
+//   const response = await axios.get(BASE_URL + CORRECT_URL);
+//TODO   console.log(BASE_URL +);
+//   console.log(response)
+// displayData(response);
+// };
+
+// fetchCorrectAnswer();
+
+async function fetchWrongAnswer() {
+  const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
+  // fetchCorrectAnswer();
+  // displayData(response);
+};
+
 //14 - Write play again / reset function
 //15 - Write duplicate prevention into quote function at 2
 
