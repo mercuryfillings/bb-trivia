@@ -1,23 +1,20 @@
-console.log('Working')
-const BASE_URL = `https://breakingbadapi.com/api/`;
-const QUOTE_URL = `quote/random`;
-const WRONG_ANSWER_URL = `character/random`;
-let CORRECT_URL = ``;
-
 //Full Pseudocode Instructions
+
 //Write event listener for start game button (Add button w/ class 'start' to HTML)
-document.querySelector('button').addEventListener('click', onClick);
-//Write function for event listener that builds the 
+//Done - needs to activate DOM manipulation though
+
+//Write function for event listener that captures API data on click
+//Done
+
 //API request for the first quote.
-function onClick(e) {
-  e.preventDefault();
-  fetchData();
-  // fetchCorrectAnswer();
-}
-//Write function that pulls correct answer from characters
+//Done
+
+// Write function that pulls correct answer from characters
+//Done
 
 //Write function that pulls random wrong answers from characters
 //Be sure to exlcude correct answer
+//Done, **except correct answer dedupe**
 
 //Write callback function that displays quote to DOM & separate function that displays answers
 
@@ -33,15 +30,33 @@ function onClick(e) {
 
 // Write a function that transitions to win / loss states
 
-//Write a callback function for answer selector at 6 that passes in 7-11
-
-//Write async function to pull data
+//Write async functions to pull data
+//done
 
 //Write function to randomize position of answers
+//May not be needed bc of async - will report back
 
 //Write function that changes start button to restart button
 
-//
+//Write play again / reset function
+
+//Write duplicate prevention into quote function at 2
+
+console.log('Working')
+
+const BASE_URL = `https://breakingbadapi.com/api/`;
+const QUOTE_URL = `quote/random`;
+const WRONG_ANSWER_URL = `character/random`;
+let CORRECT_URL = ``;
+
+document.querySelector('button').addEventListener('click', onClick);
+
+function onClick(e) {
+  e.preventDefault();
+  fetchData();
+  // fetchCorrectAnswer();
+}
+
 function accessData(response) {
   //create variable for the quote
   let quote = response.data;
@@ -57,13 +72,7 @@ function accessData(response) {
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
-
-  // ?name = Walter + White
-  // //select movie list
-  // const selectMovieList = document.querySelector(".movie-list");
-  // //iterate through the results
 }
-
 
 async function fetchData() {
   const response = await axios.get(BASE_URL + QUOTE_URL);
@@ -100,7 +109,6 @@ async function fetchWrongAnswer2() {
   // displayData(response);
 };
 
-//14 - Write play again / reset function
-//15 - Write duplicate prevention into quote function at 2
+
 
 
