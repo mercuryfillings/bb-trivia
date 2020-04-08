@@ -76,13 +76,17 @@ function accessQuote(response) {
     correctAnswer = 'Gus';
   } else if (correctAnswer === 'Chuck McGill') {
     correctAnswer = 'Charles McGill';
-  }
+  } else if (correctAnswer === 'Kim Wexler') {
+    correctAnswer = 'Kim';
+  };
   displayQuote(quote);
   CORRECT_URL = `characters?name=${correctAnswer}`;
-  console.log(`correct answer = ${correctAnswer}`);
+  console.log(`correct answer is: ${correctAnswer}`);
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
+  fetchWrongAnswer1();
+  fetchWrongAnswer2();
 }
 
 function displayQuote(quote) {
@@ -91,54 +95,46 @@ function displayQuote(quote) {
 }
 
 function accessCorrect(response) {
-  let correctCharacter = response.data;
-  let correctImg = correctCharacter[0].img;
-  console.log(correctImg)
+  let correctCharacterData = response.data;
+  console.log(`Correct character: ${correctCharacterData}`)
+  displayCorrect(correctCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
-
-  console.log(correctImg)
-  displayCorrect(correctImg);
 }
 
-function displayCorrect(correctImg) {
-  let li = document.createElement('li');
-  li.className = 'circle';
-  const correctContent = document.querySelector('.answerbox');
-  li.innerHTML = `<img src="https://vignette.wikia.nocookie.net/breakingbad/images/1/1f/BCS_S4_Gustavo_Fring.jpg/revision/latest?cb=20180824195925">` //${correctImg}
-  correctContent.appendChild(li)
+function displayCorrect(correctCharacterData) {
+  console.log('ok')
+  // let li = document.createElement('li');
+  // li.className = 'circle';
+  // let img = document.createElement('img');
+  // img.src = `${correctCharacter[0].img}`;
+  // li.innerHTML = img;
+  // const correctContent = document.querySelector('.answerbox');
+  // correctContent.appendChild(li)
 }
 
 async function fetchQuote() {
   const response = await axios.get(BASE_URL + QUOTE_URL);
   accessQuote(response);
-  fetchCorrectAnswer();
-  fetchWrongAnswer1();
-  fetchWrongAnswer2(); //not dry but it works, unlike looping 
 };
 
 async function fetchCorrectAnswer() {
   const response = await axios.get(BASE_URL + CORRECT_URL);
-  displayCorrect(response);
+  accessCorrect(response);
   console.log(BASE_URL + CORRECT_URL);
   console.log(response.data[0].name);
 };
 
 async function fetchWrongAnswer1() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
-  console.log(response.data[0].name);
-  // displayData(response);
 };
 
 async function fetchWrongAnswer2() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
-  console.log(response.data[0].name);
-  // displayData(response);
+  fetchCorrectAnswer();
 };
 
 function playRound() {
   fetchQuote();
-  // fetchWrongAnswer1();
-  // fetchWrongAnswer2();
 }
 
 
