@@ -55,9 +55,9 @@ function onClick(e) {
   e.preventDefault();
   let button = document.querySelector('button');
   if (button.className === "restart") {
-  //clear score
-  //reset lives
-  //pull new quote
+    //clear score
+    //reset lives
+    //pull new quote
   } else {
     button.className = "restart";
     button.innerHTML = "Restart";
@@ -77,11 +77,17 @@ function accessData(response) {
   } else if (correctAnswer === 'Chuck McGill') {
     correctAnswer = 'Charles McGill';
   }
+  displayQuote(quote);
   CORRECT_URL = `characters?name=${correctAnswer}`;
   console.log(`correct answer = ${correctAnswer}`);
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
+}
+
+function displayQuote(quote) {
+  const displayQuote = document.querySelector('.quote');
+  displayQuote.innerHTML = quote[0].quote;
 }
 
 async function fetchData() {
@@ -98,10 +104,6 @@ async function fetchCorrectAnswer() {
   console.log(response.data[0].name);
   // displayData(response);
 };
-
-function displayData() {
-
-}
 
 async function fetchWrongAnswer1() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
