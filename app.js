@@ -57,15 +57,15 @@ function onClick(e) {
   if (button.className === "restart") {
     //clear score
     //reset lives
-    fetchData();
+    playRound();
   } else {
     button.className = "restart";
     button.innerHTML = "Restart";
-    fetchData();
+    playRound();
   }
 }
 
-function accessData(response) {
+function accessQuote(response) {
   //create variable for the quote
   let quote = response.data;
   console.log(quote[0].quote)
@@ -83,9 +83,6 @@ function accessData(response) {
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
-  // let choice1 = character[0].
-  // displayCorrect(answer);
-  // displayIncorrect(answer)
 }
 
 function displayQuote(quote) {
@@ -93,16 +90,25 @@ function displayQuote(quote) {
   quoteText.innerHTML = `\"${quote[0].quote}\"`;
 }
 
-function displayCorrect(response) {
-  let li = document.createElement('li').className = "answer";
-  li.innerHTML = `${}`
+function accessCorrect(response) {
+  let correctCharacter = response.data;
+  let correctImg = correctCharacter[0].img;
+  let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
+  correctImg.className = "answerpic";
+  displayCorrect(correctImg);
+}
+
+
+function displayCorrect(option) {
+  let li = document.createElement('li');
+  //li.innerHTML = `${}` Add title and alt
   const correctContent = document.querySelector('.answerbox');
   correctContent.appendChild(li)
 }
 
-async function fetchData() {
+async function fetchQuote() {
   const response = await axios.get(BASE_URL + QUOTE_URL);
-  accessData(response);
+  accessQuote(response);
   fetchCorrectAnswer();
   fetchWrongAnswer1();
   fetchWrongAnswer2(); //not dry but it works, unlike looping 
@@ -128,6 +134,12 @@ async function fetchWrongAnswer2() {
   // displayData(response);
 };
 
+function playRound() {
+  fetchQuote();
+  fetchCorrectAnswer();
+  fetchWrongAnswer1();
+  fetchWrongAnswer2();
+}
 
 
 
