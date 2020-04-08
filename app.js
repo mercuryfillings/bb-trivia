@@ -93,16 +93,18 @@ function displayQuote(quote) {
 function accessCorrect(response) {
   let correctCharacter = response.data;
   let correctImg = correctCharacter[0].img;
-  let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
-  correctImg.className = "answerpic";
+  console.log(correctImg)
+  // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
+
+  console.log(correctImg)
   displayCorrect(correctImg);
 }
 
-
-function displayCorrect(option) {
+function displayCorrect(correctImg) {
   let li = document.createElement('li');
-  //li.innerHTML = `${}` Add title and alt
+  li.className = 'circle';
   const correctContent = document.querySelector('.answerbox');
+  li.innerHTML = `<img src="https://vignette.wikia.nocookie.net/breakingbad/images/1/1f/BCS_S4_Gustavo_Fring.jpg/revision/latest?cb=20180824195925">` //${correctImg}
   correctContent.appendChild(li)
 }
 
@@ -119,7 +121,6 @@ async function fetchCorrectAnswer() {
   displayCorrect(response);
   console.log(BASE_URL + CORRECT_URL);
   console.log(response.data[0].name);
-  // displayData(response);
 };
 
 async function fetchWrongAnswer1() {
@@ -136,9 +137,8 @@ async function fetchWrongAnswer2() {
 
 function playRound() {
   fetchQuote();
-  fetchCorrectAnswer();
-  fetchWrongAnswer1();
-  fetchWrongAnswer2();
+  // fetchWrongAnswer1();
+  // fetchWrongAnswer2();
 }
 
 
