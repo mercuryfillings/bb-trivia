@@ -68,6 +68,7 @@ function onClick(e) {
 function accessQuote(response) {
   //create variable for the quote
   let quote = response.data;
+  console.log(quote);
   console.log(quote[0].quote)
   let correctAnswer = quote[0].author;
   if (correctAnswer === 'Jimmy McGill') {
@@ -96,20 +97,20 @@ function displayQuote(quote) {
 
 function accessCorrect(response) {
   let correctCharacterData = response.data;
-  console.log(`Correct character: ${correctCharacterData}`)
+  console.log(correctCharacterData);
   displayCorrect(correctCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
 
 function displayCorrect(correctCharacterData) {
-  console.log('ok')
-  // let li = document.createElement('li');
-  // li.className = 'circle';
-  // let img = document.createElement('img');
-  // img.src = `${correctCharacter[0].img}`;
-  // li.innerHTML = img;
-  // const correctContent = document.querySelector('.answerbox');
-  // correctContent.appendChild(li)
+  let li = document.createElement('li');
+  li.className = 'circle';
+  let img = document.createElement('img');
+  img.src = `${correctCharacterData[0].img}`;
+  console.log(img);
+  li.appendChild(img);
+  const correctContent = document.querySelector('.answerbox');
+  correctContent.appendChild(li)
 }
 
 async function fetchQuote() {
