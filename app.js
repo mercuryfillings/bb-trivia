@@ -65,7 +65,9 @@ function accessData(response) {
   if (correctAnswer === 'Jimmy McGill') {
     correctAnswer = 'Saul Goodman'
   } else if (correctAnswer === 'Gus Fring') {
-    correctAnswer = Gus;
+    correctAnswer = 'Gus';
+  } else if (correctAnswer === 'Chuck McGill') {
+    correctAnswer = 'Charles McGill';
   }
   CORRECT_URL = `characters?name=${correctAnswer}`
   console.log(`correct answer = ${correctAnswer}`)
