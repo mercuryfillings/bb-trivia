@@ -15,12 +15,12 @@ body {
 
 .card {
   width: auto;
-  height: auto;
-  background:transparent;
-  position:absolute;
+  height: 60%;
+  background: transparent;
+  position: flex;
   left: 15px;
   right: 15px;
-  margin:auto;
+  margin:15px;
   top: 15px;
   bottom: 15px;
   border-radius:10px;
@@ -35,8 +35,8 @@ body {
   }
 
 header {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -67,7 +67,8 @@ button {
   color: white;
   border-radius: 10px;
   background: #5e7751;
-  box-shadow:  -6px 6px 11px #44563a
+  box-shadow:  -6px 6px 11px #44563a;
+  margin: 15px;
 }
 
 .start {
@@ -83,7 +84,7 @@ button {
   flex-wrap: wrap;
   width: 100%;
   flex-direction: column;
-  margin: 0 20px;
+  margin: 15px auto;
 }
 
 #lifecounter {
@@ -109,7 +110,7 @@ button {
   height: auto;
 }
 
-.score {
+#score {
   font-size: 50px;
   margin: 5px 10px;
   text-align: center;
