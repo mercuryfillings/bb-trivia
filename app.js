@@ -57,7 +57,7 @@ function onClick(e) {
   if (button.className === "restart") {
     //clear score
     //reset lives
-    //pull new quote
+    fetchData();
   } else {
     button.className = "restart";
     button.innerHTML = "Restart";
@@ -83,11 +83,21 @@ function accessData(response) {
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
+  // let choice1 = character[0].
+  // displayCorrect(answer);
+  // displayIncorrect(answer)
 }
 
 function displayQuote(quote) {
-  const displayQuote = document.querySelector('.quote');
-  displayQuote.innerHTML = quote[0].quote;
+  const quoteText = document.querySelector('.quote');
+  quoteText.innerHTML = `\"${quote[0].quote}\"`;
+}
+
+function displayCorrect(response) {
+  let li = document.createElement('li').className = "answer";
+  li.innerHTML = `${}`
+  const correctContent = document.querySelector('.answerbox');
+  correctContent.appendChild(li)
 }
 
 async function fetchData() {
@@ -100,6 +110,7 @@ async function fetchData() {
 
 async function fetchCorrectAnswer() {
   const response = await axios.get(BASE_URL + CORRECT_URL);
+  displayCorrect(response);
   console.log(BASE_URL + CORRECT_URL);
   console.log(response.data[0].name);
   // displayData(response);
