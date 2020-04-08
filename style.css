@@ -52,25 +52,27 @@ header {
   text-align: center;
   font-family: 'Crimson Text', serif;
   font-size: 2em;
-  color: #414040
+  color: #545353
 }
 
 button {
   width: 100px;
   height: 70px;
-  color: white;
+  color: rgb(242, 241, 241);
   border-radius: 10px;
+  font-size: 1.5em;
+  font-family: 'Crimson Text', serif;;
   background: #5e7751;
-  box-shadow:  -6px 6px 11px #44563a;
+  box-shadow:  -3px 3px 11px rgba(0, 0, 0, 0.55);
   margin: 15px;
 }
 
 .start {
-  background-color: Green;
+  background-color: #5e7751
 }
 
 .restart {
-  background-color: red;
+  background-color: #683338;
 }
 
 .hud {
@@ -133,6 +135,7 @@ p {
   justify-content: center;
   width: 100%;
   font-size: 2em;
+  color: #545353;
 }
 
 .board {

@@ -60,7 +60,7 @@ function onClick(e) {
     playRound();
   } else {
     button.className = "restart";
-    button.innerHTML = "Restart";
+    button.innerHTML = "RESET";
     playRound();
   }
 }
