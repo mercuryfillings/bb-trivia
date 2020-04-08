@@ -49,12 +49,20 @@ const QUOTE_URL = `quote/random`;
 const WRONG_ANSWER_URL = `character/random`;
 let CORRECT_URL = ``;
 
-document.querySelector('button').addEventListener('click', onClick);
+document.querySelector('.start').addEventListener('click', onClick);
 
 function onClick(e) {
   e.preventDefault();
-  fetchData();
-  // fetchCorrectAnswer();
+  let button = document.querySelector('button');
+  if (button.className === "restart") {
+  //clear score
+  //reset lives
+  //pull new quote
+  } else {
+    button.className = "restart";
+    button.innerHTML = "Restart";
+    fetchData();
+  }
 }
 
 function accessData(response) {
@@ -69,8 +77,8 @@ function accessData(response) {
   } else if (correctAnswer === 'Chuck McGill') {
     correctAnswer = 'Charles McGill';
   }
-  CORRECT_URL = `characters?name=${correctAnswer}`
-  console.log(`correct answer = ${correctAnswer}`)
+  CORRECT_URL = `characters?name=${correctAnswer}`;
+  console.log(`correct answer = ${correctAnswer}`);
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
@@ -88,16 +96,12 @@ async function fetchCorrectAnswer() {
   const response = await axios.get(BASE_URL + CORRECT_URL);
   console.log(BASE_URL + CORRECT_URL);
   console.log(response.data[0].name);
-  // if (CORRECT_URL.includes('Jimmy')) {
-  //   CORRECT_URL = '/api/characters?name=Saul+Goodman'
-  // } else if (response.data[0].name === undefined) {
-  //   CORRECT_URL = CORRECT_URL.substring(0, s.indexOf('+') - 1);
-  //   console.log(CORRECT_URL);
-  // }
   // displayData(response);
 };
 
-// fetchCorrectAnswer();
+function displayData() {
+
+}
 
 async function fetchWrongAnswer1() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);

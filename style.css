@@ -47,6 +47,14 @@ button {
   margin: 20px 50px;
 }
 
+.start {
+  background-color: Green;
+}
+
+.restart {
+  background-color: red;
+}
+
 .hud {
   display: flex;
   flex-wrap: wrap;
@@ -138,137 +146,137 @@ p {
 }
 
 @media (min-width: 460){
-  
+
 }
 
 @media (min-width: 600px){
 
-body {
-  background-color: yellow;
-  margin: 0;
-  padding: 0;
-}
+  body {
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+  }
 
-header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-.gameinfo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 20px;
-}
+  .gameinfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 20px;
+  }
 
-.logo {
-  width: 10em;
-  height: auto;
-  margin: 10px;
-}
+  .logo {
+    width: 10em;
+    height: auto;
+    margin: 10px;
+  }
 
-.instructions {
-  margin: 10px 10px;
-  width: 10em;
-  text-align: center;
-}
+  .instructions {
+    margin: 10px 10px;
+    width: 10em;
+    text-align: center;
+  }
 
-button {
-  width: 100px;
-  height: 70px;
-  background-color: #20241e;
-  color: white;
-  margin: 20px 50px;
-}
+  button {
+    width: 100px;
+    height: 70px;
+    background-color: #20241e;
+    color: white;
+    margin: 20px 50px;
+  }
 
-.hud {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  flex-direction: column;
-  margin: 0 20px;
-}
+  .hud {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 20px;
+  }
 
-#lifecounter {
-  display: flex;
-  justify-content: center;
-}
+  #lifecounter {
+    display: flex;
+    justify-content: center;
+  }
 
-.lives {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 200px;
-}
+  .lives {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+  }
 
-.life {
-  display: flex;
-  justify-content: center;
-  padding: 10px 5px;
-}
+  .life {
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px;
+  }
 
-.lifeimg {
-  width: 30px;
-  height: auto;
-}
+  .lifeimg {
+    width: 30px;
+    height: auto;
+  }
 
-.score {
-  font-size: 50px;
-  margin: 5px 10px;
-  text-align: center;
-}
+  .score {
+    font-size: 50px;
+    margin: 5px 10px;
+    text-align: center;
+  }
 
-main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 20px;
-}
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
 
-.quotebox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .quotebox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-p {
-  display: flex;
-  justify-content: center;
-}
+  p {
+    display: flex;
+    justify-content: center;
+  }
 
-.quote {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-size: 2em;
-}
+  .quote {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 2em;
+  }
 
-.board {
-  display: flex;
-  margin: 20px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+  .board {
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-.answerbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .answerbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.answer {
-  display: flex;
-}
+  .answer {
+    display: flex;
+  }
 
-.answerpic {
- width: 10em;
- height: auto;
- margin: 10px;
- display: flex;
- 
- border: 1px solid black;
- border-radius: 100%;
+  .answerpic {
+    width: 10em;
+    height: auto;
+    margin: 10px;
+    display: flex;
+
+    border: 1px solid black;
+    border-radius: 100%;
+  }
 }
- }
