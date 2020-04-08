@@ -11,7 +11,7 @@ document.querySelector('button').addEventListener('click', onClick);
 //API request for the first quote.
 function onClick(e) {
   e.preventDefault();
-  fetchQuote();
+  fetchData();
   // fetchCorrectAnswer();
 }
 //Write function that pulls correct answer from characters
@@ -46,11 +46,17 @@ function accessData(response) {
   //create variable for the quote
   let quote = response.data;
   console.log(quote[0].quote)
-  CORRECT_URL = `characters?=${quote[0].author}`
+  let correctAnswer = quote[0].author;
+  if (correctAnswer === 'Jimmy McGill') {
+    correctAnswer = 'Saul Goodman'
+  } else if (correctAnswer === 'Gus Fring') {
+    correctAnswer = Gus;
+  }
+  CORRECT_URL = `characters?name=${correctAnswer}`
+  console.log(`correct answer = ${correctAnswer}`)
   if (CORRECT_URL.includes(" ")) {
     CORRECT_URL = CORRECT_URL.replace(/\s/g, "+"); //Shout to https://flaviocopes.com/how-to-replace-whitespace-javascript/ for the regEx help
   }
-  console.log(CORRECT_URL);
 
   // ?name = Walter + White
   // //select movie list
@@ -59,23 +65,38 @@ function accessData(response) {
 }
 
 
-async function fetchQuote() {
+async function fetchData() {
   const response = await axios.get(BASE_URL + QUOTE_URL);
   accessData(response);
+  fetchCorrectAnswer();
+  fetchWrongAnswer1();
+  fetchWrongAnswer2(); //not dry but it works, unlike looping 
 };
 
-// async function fetchCorrectAnswer() {
-//   const response = await axios.get(BASE_URL + CORRECT_URL);
-//TODO   console.log(BASE_URL +);
-//   console.log(response)
-// displayData(response);
-// };
+async function fetchCorrectAnswer() {
+  const response = await axios.get(BASE_URL + CORRECT_URL);
+  console.log(BASE_URL + CORRECT_URL);
+  console.log(response.data[0].name);
+  // if (CORRECT_URL.includes('Jimmy')) {
+  //   CORRECT_URL = '/api/characters?name=Saul+Goodman'
+  // } else if (response.data[0].name === undefined) {
+  //   CORRECT_URL = CORRECT_URL.substring(0, s.indexOf('+') - 1);
+  //   console.log(CORRECT_URL);
+  // }
+  // displayData(response);
+};
 
 // fetchCorrectAnswer();
 
-async function fetchWrongAnswer() {
+async function fetchWrongAnswer1() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
-  // fetchCorrectAnswer();
+  console.log(response.data[0].name);
+  // displayData(response);
+};
+
+async function fetchWrongAnswer2() {
+  const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
+  console.log(response.data[0].name);
   // displayData(response);
 };
 
