@@ -170,7 +170,15 @@ async function fetchWrongAnswer2() {
 };
 
 function playRound() {
+  if (document.querySelector('.answerbox').hasChildNodes()) {
+    clearScreen()
+  }
   fetchQuote();
+}
+
+function clearScreen() {
+  const parent = document.querySelector('.answerbox');
+  parent.querySelectorAll('*').forEach(n => n.remove())
 }
 
 function applyAnswerListener() {
@@ -179,24 +187,17 @@ function applyAnswerListener() {
   })
 }
 
-// const answerListener = document.querySelectorAll('.circle');
-// console.log(answerListener);
-// answerListener.forEach((circle, i) => {
-//   const listener = document.addEventListener('click', answerClick);
-//   console.log(listener)
-// answerListner[i].append(listener);
-//   });
-// }
-
 function answerClick(e) {
   e.preventDefault();
   let lives = document.querySelector('.lives');
+  let score = document.querySelector('.score')
+
   if (e.id === "correct") {
     document.querySelector('.score').textContent = `${pareseIn('.score') + 1}`;
-    playRound();
+    setTimeout(playRound, 2000)
   } else {
     lives.removeChild(lives.childNodes[0]);
-    playRound();
+    setTimeout(playRound, 2000);
   }
 }
 

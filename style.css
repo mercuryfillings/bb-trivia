@@ -106,10 +106,16 @@ button {
   height: auto;
 }
 
-#score {
+#scoreboard {
+
+}
+
+.score {
   font-size: 50px;
   margin: 5px 10px;
   text-align: center;
+  font-family: 
+  font-weight: 
 }
 
 main {
