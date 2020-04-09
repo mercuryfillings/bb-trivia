@@ -69,7 +69,6 @@ function onClick(e) {
 function accessQuote(response) {
   //create variable for the quote
   let quote = response.data;
-  console.log(quote);
   console.log(quote[0].quote)
   correctAnswer = quote[0].author;
   if (correctAnswer === 'Jimmy McGill') {
@@ -98,7 +97,6 @@ function displayQuote(quote) {
 
 function accessCorrect(response) {
   let correctCharacterData = response.data;
-  console.log(correctCharacterData);
   displayCorrect(correctCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
@@ -110,15 +108,14 @@ function displayCorrect(correctCharacterData) {
   let img = document.createElement('img');
   img.src = `${correctCharacterData[0].img}`;
   img.title = `${correctCharacterData[0].name}`;
-  console.log(img);
   li.appendChild(img);
   const correctContent = document.querySelector('.answerbox');
   correctContent.appendChild(li);
+  applyAnswerListener();
 }
 
 function accessIncorrect1(response) {
   let incorrectCharacterData = response.data;
-  console.log(incorrectCharacterData);
   displayIncorrect1(incorrectCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
@@ -129,7 +126,6 @@ function displayIncorrect1(incorrectCharacterData) {
   let img = document.createElement('img');
   img.src = `${incorrectCharacterData[0].img}`;
   img.title = `${incorrectCharacterData[0].name}`;
-  console.log(img);
   li.appendChild(img);
   const incorrectContent = document.querySelector('.answerbox');
   incorrectContent.appendChild(li);
@@ -137,7 +133,6 @@ function displayIncorrect1(incorrectCharacterData) {
 
 function accessIncorrect2(response) {
   let incorrectCharacterData = response.data;
-  console.log(incorrectCharacterData);
   displayIncorrect2(incorrectCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
@@ -148,11 +143,9 @@ function displayIncorrect2(incorrectCharacterData) {
   let img = document.createElement('img');
   img.title = `${incorrectCharacterData[0].name}`;
   img.src = `${incorrectCharacterData[0].img}`;
-  console.log(img);
   li.appendChild(img);
   const incorrectContent = document.querySelector('.answerbox');
   incorrectContent.appendChild(li);
-  applyAnswerListener();
 }
 
 async function fetchQuote() {
@@ -163,8 +156,6 @@ async function fetchQuote() {
 async function fetchCorrectAnswer() {
   const response = await axios.get(BASE_URL + CORRECT_URL);
   accessCorrect(response);
-  console.log(BASE_URL + CORRECT_URL);
-  console.log(response.data[0].name);
 };
 
 async function fetchWrongAnswer1() {
@@ -182,32 +173,37 @@ function playRound() {
   fetchQuote();
 }
 
-// function getCorrect() {
-//   document.querySelectorAll('.circle').addEventListener('click', answerVerify);
-// }
-
 function applyAnswerListener() {
-  const answerListener = document.querySelectorAll('.circle');
-  console.log(answerListener);
-  // answerListener.forEach((circle, i) => {
-  //   const listener = document.addEventListener('click', answerClick);
-  //   answerListner[i].append(listener);
-  // });
+  document.querySelectorAll('.circle').forEach((circle) => {
+    circle.addEventListener('click', answerClick);
+  })
 }
+
+// const answerListener = document.querySelectorAll('.circle');
+// console.log(answerListener);
+// answerListener.forEach((circle, i) => {
+//   const listener = document.addEventListener('click', answerClick);
+//   console.log(listener)
+// answerListner[i].append(listener);
+//   });
+// }
 
 function answerClick(e) {
   e.preventDefault();
-  console.log('click worked');
+  let lives = document.querySelector('.lives');
+  if (e.id === "correct") {
+    document.querySelector('.score').textContent = `${pareseIn('.score') + 1}`;
+    playRound();
+  } else {
+    lives.removeChild(lives.childNodes[0]);
+    playRound();
+  }
 }
 
-function answerVerify(answer) {
-  console.log("verify worked")
-  // if ( ) {
-  //   document.querySelector('.score') = `${pareseIn('.score') + 1}`;
-  // } else {
-  //   lives.removeChild(lives.childNodes[0]);
-  // }
-}
+// function answerVerify(answer) {
+//   console.log("verify worked")
+
+// }
 
 
 
