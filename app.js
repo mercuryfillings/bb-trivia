@@ -200,24 +200,25 @@ function answerClick(e) {
     console.log("right");
     score++;
     document.querySelector('.score').textContent = score;
-    setTimeout(playRound, 2000)
+    setTimeout(playRound, 1500);
   } else {
-    console.log("wrong")
-    lives.removeChild(lives.childNodes[0]);
-    setTimeout(playRound, 2000);
+    console.log("wrong");
+    console.log(lives.children)
+    lives.removeChild(lives.children[0]);
+    setTimeout(playRound, 1500);
   }
 }
 
-// function gameOver() {
-//   let lives = document.querySelector('.lives');
-//   let score = document.querySelector('.score').textContent;
-//   if (pareseInt(score) >= 5) {
-//     clearScreen();
-//     document.createElement()
-//   }
-//   if (lives.hasChildNodes() != true) {
-//     clearScreen();
-//     document.createElement
-//   }
-// }
+function gameOver() {
+  let lives = document.querySelector('.lives');
+  let score = document.querySelector('.score').textContent;
+  if (pareseInt(score) >= 5) {
+    clearScreen();
+    document.createElement()
+  }
+  if (lives.hasChildNodes() != true) {
+    clearScreen();
+    document.createElement
+  }
+}
 
