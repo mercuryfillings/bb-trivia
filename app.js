@@ -200,25 +200,30 @@ function answerClick(e) {
     console.log("right");
     score++;
     document.querySelector('.score').textContent = score;
-    setTimeout(playRound, 1500);
+    checkWinLoss()
+
   } else {
     console.log("wrong");
     console.log(lives.children)
     lives.removeChild(lives.children[0]);
-    setTimeout(playRound, 1500);
+    checkWinLoss();
   }
 }
 
-function gameOver() {
+function checkWinLoss() {
   let lives = document.querySelector('.lives');
   let score = document.querySelector('.score').textContent;
-  if (pareseInt(score) >= 5) {
+  score = parseInt(score)
+  if (score >= 5) {
     clearScreen();
-    document.createElement()
-  }
-  if (lives.hasChildNodes() != true) {
+    const winMsg = document.querySelector('h1');
+    winMsg.textContent = 'YOU WIN';
+    winMsg.className = 'win';
+  } else if (lives.hasChildNodes() != true) {
     clearScreen();
-    document.createElement
-  }
+    const loseMsg = document.querySelector('h1');
+    loseMsg.textContent = 'YOU LOSE';
+    loseMsg.className = 'loss';
+  } else setTimeout(playRound, 1500);
 }
 

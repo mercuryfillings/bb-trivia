@@ -189,6 +189,14 @@ p {
   height: auto;
 }
 
+.win {
+  color: #5e7751;
+}
+
+.loss {
+  color: #683338;
+}
+
 
 /* @media (min-width: 900px){
 
