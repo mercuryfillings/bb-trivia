@@ -110,7 +110,43 @@ function displayCorrect(correctCharacterData) {
   console.log(img);
   li.appendChild(img);
   const correctContent = document.querySelector('.answerbox');
-  correctContent.appendChild(li)
+  correctContent.appendChild(li);
+}
+
+function accessIncorrect1(response) {
+  let incorrectCharacterData = response.data;
+  console.log(incorrectCharacterData);
+  displayIncorrect1(incorrectCharacterData);
+  // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
+}
+
+function displayIncorrect1(incorrectCharacterData) {
+  let li = document.createElement('li');
+  li.className = 'circle';
+  let img = document.createElement('img');
+  img.src = `${incorrectCharacterData[0].img}`;
+  console.log(img);
+  li.appendChild(img);
+  const incorrectContent = document.querySelector('.answerbox');
+  incorrectContent.appendChild(li);
+}
+
+function accessIncorrect2(response) {
+  let incorrectCharacterData = response.data;
+  console.log(incorrectCharacterData);
+  displayIncorrect2(incorrectCharacterData);
+  // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
+}
+
+function displayIncorrect2(incorrectCharacterData) {
+  let li = document.createElement('li');
+  li.className = 'circle';
+  let img = document.createElement('img');
+  img.src = `${incorrectCharacterData[0].img}`;
+  console.log(img);
+  li.appendChild(img);
+  const incorrectContent = document.querySelector('.answerbox');
+  incorrectContent.appendChild(li)
 }
 
 async function fetchQuote() {
@@ -127,10 +163,12 @@ async function fetchCorrectAnswer() {
 
 async function fetchWrongAnswer1() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
+  accessIncorrect1(response);
 };
 
 async function fetchWrongAnswer2() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
+  accessIncorrect2(response)
   fetchCorrectAnswer();
 };
 
