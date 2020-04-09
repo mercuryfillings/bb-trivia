@@ -104,10 +104,10 @@ function accessCorrect(response) {
 function displayCorrect(correctCharacterData) {
   let li = document.createElement('li');
   li.className = 'circle';
-  li.id = 'correct';
   let img = document.createElement('img');
   img.src = `${correctCharacterData[0].img}`;
   img.title = `${correctCharacterData[0].name}`;
+  img.className = `correct`;
   li.appendChild(img);
   const correctContent = document.querySelector('.answerbox');
   correctContent.appendChild(li);
@@ -189,16 +189,16 @@ function applyAnswerListener() {
 
 function answerClick(e) {
   e.preventDefault();
+  let targetElement = event.target;
   let lives = document.querySelector('.lives');
   let score = document.querySelector('.score').textContent;
-  console.log(score)
-  if (e.id === "correct") {
-    let score = document.querySelector('.score');
-    console.log(score)
-    score.textContent = `${pareseInt('.score') + 1}`;
-    console.log(score)
+  if (targetElement.className === 'correct') {
+    console.log("right")
+    score.textContent = `${parseInt(score) + 1}`;
+    console.log(score.textContent)
     setTimeout(playRound, 2000)
   } else {
+    console.log("wrong")
     lives.removeChild(lives.childNodes[0]);
     setTimeout(playRound, 2000);
   }
