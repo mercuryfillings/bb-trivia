@@ -73,6 +73,7 @@ function accessQuote(response) {
   console.log(quote);
   console.log(quote[0].quote)
   correctAnswer = quote[0].author;
+  correct = quote[0].author;
   if (correctAnswer === 'Jimmy McGill') {
     correctAnswer = 'Saul Goodman'
   } else if (correctAnswer === 'Gus Fring') {
@@ -114,7 +115,7 @@ function displayCorrect(correctCharacterData) {
   li.appendChild(img);
   const correctContent = document.querySelector('.answerbox');
   correctContent.appendChild(li);
-  chooseAnswer();
+  applyAnswerListener();
 }
 
 function accessIncorrect1(response) {
@@ -164,6 +165,7 @@ async function fetchQuote() {
 async function fetchCorrectAnswer() {
   const response = await axios.get(BASE_URL + CORRECT_URL);
   accessCorrect(response);
+  accessIncorrect2(response);
   console.log(BASE_URL + CORRECT_URL);
   console.log(response.data[0].name);
 };
@@ -175,7 +177,6 @@ async function fetchWrongAnswer1() {
 
 async function fetchWrongAnswer2() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
-  accessIncorrect2(response)
   fetchCorrectAnswer();
 };
 
@@ -183,8 +184,17 @@ function playRound() {
   fetchQuote();
 }
 
-function getCorrect() {
-  correct = document.querySelectorAll('.circle').addEventListener('click', answerVerify);
+// function getCorrect() {
+//   document.querySelectorAll('.circle').addEventListener('click', answerVerify);
+// }
+
+function applyAnswerListener() {
+  document.querySelectorAll('.circle').addEventListener('click', answerClick);
+}
+
+function answerClick(e) {
+  e.preventDefault();
+  let circle = document.querySelector('circle');
 }
 
 //get the name from X function and compare it against the correctAnswer variable above
