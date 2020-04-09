@@ -190,10 +190,13 @@ function applyAnswerListener() {
 function answerClick(e) {
   e.preventDefault();
   let lives = document.querySelector('.lives');
-  let score = document.querySelector('.score')
-
+  let score = document.querySelector('.score').textContent;
+  console.log(score)
   if (e.id === "correct") {
-    document.querySelector('.score').textContent = `${pareseIn('.score') + 1}`;
+    let score = document.querySelector('.score');
+    console.log(score)
+    score.textContent = `${pareseInt('.score') + 1}`;
+    console.log(score)
     setTimeout(playRound, 2000)
   } else {
     lives.removeChild(lives.childNodes[0]);
@@ -201,10 +204,16 @@ function answerClick(e) {
   }
 }
 
-// function answerVerify(answer) {
-//   console.log("verify worked")
-
+// function gameOver() {
+//   let lives = document.querySelector('.lives');
+//   let score = document.querySelector('.score').textContent;
+//   if (pareseInt(score) >= 5) {
+//     clearScreen();
+//     document.createElement()
+//   }
+//   if (lives.hasChildNodes() != true) {
+//     clearScreen();
+//     document.createElement
+//   }
 // }
-
-
 
