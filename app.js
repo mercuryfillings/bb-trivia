@@ -48,7 +48,6 @@ const BASE_URL = `https://breakingbadapi.com/api/`;
 const QUOTE_URL = `quote/random`;
 const WRONG_ANSWER_URL = `character/random`;
 let CORRECT_URL = ``;
-let correct = ``;
 let playerAnswer = ``;
 
 document.querySelector('.start').addEventListener('click', onClick);
@@ -73,7 +72,6 @@ function accessQuote(response) {
   console.log(quote);
   console.log(quote[0].quote)
   correctAnswer = quote[0].author;
-  correct = quote[0].author;
   if (correctAnswer === 'Jimmy McGill') {
     correctAnswer = 'Saul Goodman'
   } else if (correctAnswer === 'Gus Fring') {
@@ -108,6 +106,7 @@ function accessCorrect(response) {
 function displayCorrect(correctCharacterData) {
   let li = document.createElement('li');
   li.className = 'circle';
+  li.id = 'correct';
   let img = document.createElement('img');
   img.src = `${correctCharacterData[0].img}`;
   img.title = `${correctCharacterData[0].name}`;
@@ -115,7 +114,6 @@ function displayCorrect(correctCharacterData) {
   li.appendChild(img);
   const correctContent = document.querySelector('.answerbox');
   correctContent.appendChild(li);
-  applyAnswerListener();
 }
 
 function accessIncorrect1(response) {
@@ -153,8 +151,8 @@ function displayIncorrect2(incorrectCharacterData) {
   console.log(img);
   li.appendChild(img);
   const incorrectContent = document.querySelector('.answerbox');
-  incorrectContent.appendChild(li)
-  document.querySelector('.circle').addEventListener('click', answerVerify(answer));
+  incorrectContent.appendChild(li);
+  applyAnswerListener();
 }
 
 async function fetchQuote() {
@@ -165,7 +163,6 @@ async function fetchQuote() {
 async function fetchCorrectAnswer() {
   const response = await axios.get(BASE_URL + CORRECT_URL);
   accessCorrect(response);
-  accessIncorrect2(response);
   console.log(BASE_URL + CORRECT_URL);
   console.log(response.data[0].name);
 };
@@ -177,6 +174,7 @@ async function fetchWrongAnswer1() {
 
 async function fetchWrongAnswer2() {
   const response = await axios.get(BASE_URL + WRONG_ANSWER_URL);
+  accessIncorrect2(response);
   fetchCorrectAnswer();
 };
 
@@ -189,21 +187,26 @@ function playRound() {
 // }
 
 function applyAnswerListener() {
-  document.querySelectorAll('.circle').addEventListener('click', answerClick);
+  const answerListener = document.querySelectorAll('.circle');
+  console.log(answerListener);
+  // answerListener.forEach((circle, i) => {
+  //   const listener = document.addEventListener('click', answerClick);
+  //   answerListner[i].append(listener);
+  // });
 }
 
 function answerClick(e) {
   e.preventDefault();
-  let circle = document.querySelector('circle');
+  console.log('click worked');
 }
 
-//get the name from X function and compare it against the correctAnswer variable above
-function answerVerify() {
-  if (answerClick === correctAnswer) {
-    document.querySelector('.score') = `${pareseIn('.score') + 1}`;
-  } else if (playerAnswer != correctAnswer) {
-    lives.removeChild(lives.childNodes[0]);
-  }
+function answerVerify(answer) {
+  console.log("verify worked")
+  // if ( ) {
+  //   document.querySelector('.score') = `${pareseIn('.score') + 1}`;
+  // } else {
+  //   lives.removeChild(lives.childNodes[0]);
+  // }
 }
 
 
