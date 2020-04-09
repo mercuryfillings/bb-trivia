@@ -79,7 +79,9 @@ function accessQuote(response) {
     correctAnswer = 'Charles McGill';
   } else if (correctAnswer === 'Kim Wexler') {
     correctAnswer = 'Kim';
-  };
+  } else if (correctAnswer === 'Hank Schrader') {
+    correctAnswer = 'Henry Schrader';
+  }
   displayQuote(quote);
   CORRECT_URL = `characters?name=${correctAnswer}`;
   console.log(`correct answer is: ${correctAnswer}`);
@@ -192,10 +194,12 @@ function answerClick(e) {
   let targetElement = event.target;
   let lives = document.querySelector('.lives');
   let score = document.querySelector('.score').textContent;
+  score = parseInt(score);
+  console.log(score);
   if (targetElement.className === 'correct') {
-    console.log("right")
-    score.textContent = `${parseInt(score) + 1}`;
-    console.log(score.textContent)
+    console.log("right");
+    score++;
+    document.querySelector('.score').textContent = score;
     setTimeout(playRound, 2000)
   } else {
     console.log("wrong")
