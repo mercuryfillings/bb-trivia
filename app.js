@@ -48,6 +48,8 @@ const BASE_URL = `https://breakingbadapi.com/api/`;
 const QUOTE_URL = `quote/random`;
 const WRONG_ANSWER_URL = `character/random`;
 let CORRECT_URL = ``;
+let correctAnswer = ``;
+let playerAnswer = ``;
 
 document.querySelector('.start').addEventListener('click', onClick);
 
@@ -70,7 +72,7 @@ function accessQuote(response) {
   let quote = response.data;
   console.log(quote);
   console.log(quote[0].quote)
-  let correctAnswer = quote[0].author;
+  correctAnswer = quote[0].author;
   if (correctAnswer === 'Jimmy McGill') {
     correctAnswer = 'Saul Goodman'
   } else if (correctAnswer === 'Gus Fring') {
@@ -107,10 +109,12 @@ function displayCorrect(correctCharacterData) {
   li.className = 'circle';
   let img = document.createElement('img');
   img.src = `${correctCharacterData[0].img}`;
+  img.title = `${correctCharacterData[0].name}`;
   console.log(img);
   li.appendChild(img);
   const correctContent = document.querySelector('.answerbox');
   correctContent.appendChild(li);
+  chooseAnswer();
 }
 
 function accessIncorrect1(response) {
@@ -125,6 +129,7 @@ function displayIncorrect1(incorrectCharacterData) {
   li.className = 'circle';
   let img = document.createElement('img');
   img.src = `${incorrectCharacterData[0].img}`;
+  img.title = `${incorrectCharacterData[0].name}`;
   console.log(img);
   li.appendChild(img);
   const incorrectContent = document.querySelector('.answerbox');
@@ -142,11 +147,13 @@ function displayIncorrect2(incorrectCharacterData) {
   let li = document.createElement('li');
   li.className = 'circle';
   let img = document.createElement('img');
+  img.title = `${incorrectCharacterData[0].name}`;
   img.src = `${incorrectCharacterData[0].img}`;
   console.log(img);
   li.appendChild(img);
   const incorrectContent = document.querySelector('.answerbox');
   incorrectContent.appendChild(li)
+  document.querySelector('.circle').addEventListener('click', answerVerify(answer));
 }
 
 async function fetchQuote() {
@@ -174,6 +181,23 @@ async function fetchWrongAnswer2() {
 
 function playRound() {
   fetchQuote();
+}
+
+function chooseAnswer(e) {
+  e.preventDefault();
+  let answer = document.querySelectorAll('.circle').addEventListener('click', answerVerify);
+  console.log('clicked');
+  playerAnswer = document.querySelector('circle');
+  verifyAnswer(playerAnswer);
+}
+
+//get the aname from X function and compare it against the correctAnswer variable above
+function verifyAnswer() {
+  if (answerClick === correctAnswer) {
+    document.querySelector('.score') = `${pareseIn('.score') + 1}`;
+  } else if (playerAnswer != correctAnswer) {
+    lives.removeChild(lives.childNodes[0]);
+  }
 }
 
 
