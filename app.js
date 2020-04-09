@@ -187,6 +187,7 @@ function applyAnswerListener() {
   document.querySelectorAll('.circle').forEach((circle) => {
     circle.addEventListener('click', answerClick);
   })
+  shuffle();
 }
 
 function answerClick(e) {
@@ -227,3 +228,10 @@ function checkWinLoss() {
   } else setTimeout(playRound, 1500);
 }
 
+function shuffle() {
+  let rando = Math.floor(Math.random() * Math.floor(5));
+  for (let i = 1; i <= rando; i++) {
+    let position = document.querySelector('.answerbox');
+    position.appendChild(position.firstChild);
+  }
+}
