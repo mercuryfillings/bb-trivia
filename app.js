@@ -48,7 +48,7 @@ const BASE_URL = `https://breakingbadapi.com/api/`;
 const QUOTE_URL = `quote/random`;
 const WRONG_ANSWER_URL = `character/random`;
 let CORRECT_URL = ``;
-let correctAnswer = ``;
+let correct = ``;
 let playerAnswer = ``;
 
 document.querySelector('.start').addEventListener('click', onClick);
@@ -183,16 +183,12 @@ function playRound() {
   fetchQuote();
 }
 
-function chooseAnswer(e) {
-  e.preventDefault();
-  let answer = document.querySelectorAll('.circle').addEventListener('click', answerVerify);
-  console.log('clicked');
-  playerAnswer = document.querySelector('circle');
-  verifyAnswer(playerAnswer);
+function getCorrect() {
+  correct = document.querySelectorAll('.circle').addEventListener('click', answerVerify);
 }
 
-//get the aname from X function and compare it against the correctAnswer variable above
-function verifyAnswer() {
+//get the name from X function and compare it against the correctAnswer variable above
+function answerVerify() {
   if (answerClick === correctAnswer) {
     document.querySelector('.score') = `${pareseIn('.score') + 1}`;
   } else if (playerAnswer != correctAnswer) {
