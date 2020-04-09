@@ -197,8 +197,10 @@ p {
   color: #683338;
 }
 
-
-/* @media (min-width: 900px){
+@media (min-wdith: 768px) {
+  
+}
+/* @media (min-width: 768px){
 
   body {
     margin: 0;

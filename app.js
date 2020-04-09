@@ -1,47 +1,3 @@
-//Full Pseudocode Instructions
-
-//Write event listener for start game button (Add button w/ class 'start' to HTML)
-//Done - needs to activate DOM manipulation though
-
-//Write function for event listener that captures API data on click
-//Done
-
-//API request for the first quote.
-//Done
-
-// Write function that pulls correct answer from characters
-//Done
-
-//Write function that pulls random wrong answers from characters
-//Be sure to exlcude correct answer
-//Done, **except correct answer dedupe**
-
-//Write callback function that displays quote to DOM & separate function that displays answers
-
-//Write event listener for selecting answers
-
-//Write a function that checks for correctness of answer
-
-//Write function that increments score or removes lives in correct / incorrect scenarios
-
-//Write a function that checks for win state
-
-//Write a function that transitions to the next question (based on start game function - can this be DRY?)
-
-// Write a function that transitions to win / loss states
-
-//Write async functions to pull data
-//done
-
-//Write function to randomize position of answers
-//May not be needed bc of async - will report back
-
-//Write function that changes start button to restart button
-
-//Write play again / reset function
-
-//Write duplicate prevention into quote function at 2
-
 console.log('Working')
 
 const BASE_URL = `https://breakingbadapi.com/api/`;
@@ -56,9 +12,7 @@ function onClick(e) {
   e.preventDefault();
   let button = document.querySelector('button');
   if (button.className === "restart") {
-    //clear score
-    //reset lives
-    playRound();
+    location.reload();
   } else {
     button.className = "restart";
     button.innerHTML = "RESET";
@@ -235,3 +189,47 @@ function shuffle() {
     position.appendChild(position.firstChild);
   }
 }
+
+//Full Pseudocode Instructions
+
+//Write event listener for start game button (Add button w/ class 'start' to HTML)
+//Done - needs to activate DOM manipulation though
+
+//Write function for event listener that captures API data on click
+//Done
+
+//API request for the first quote.
+//Done
+
+// Write function that pulls correct answer from characters
+//Done
+
+//Write function that pulls random wrong answers from characters
+//Be sure to exlcude correct answer
+//Done, **except correct answer dedupe**
+
+//Write callback function that displays quote to DOM & separate function that displays answers
+
+//Write event listener for selecting answers
+
+//Write a function that checks for correctness of answer
+
+//Write function that increments score or removes lives in correct / incorrect scenarios
+
+//Write a function that checks for win state
+
+//Write a function that transitions to the next question (based on start game function - can this be DRY?)
+
+// Write a function that transitions to win / loss states
+
+//Write async functions to pull data
+//done
+
+//Write function to randomize position of answers
+//May not be needed bc of async - will report back
+
+//Write function that changes start button to restart button
+
+//Write play again / reset function
+
+//Write duplicate prevention into quote function at 2
