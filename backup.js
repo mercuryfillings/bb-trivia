@@ -65,7 +65,7 @@ function displayQuote(quote) {
   quoteText.innerHTML = `\"${quote[0].quote}\"`;
 }
 
-//Access data from the fetchCorrectAnswer async function below, check for duplicates
+//Access data from the correct character fetch, check for duplicates
 function accessCorrect(response) {
   let correctCharacterData = response.data;
   let record = correctCharacterData[0].name;
@@ -112,7 +112,7 @@ function accessIncorrect1(response) {
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
 
-//Display image from accessIncorrect1 above to DOM
+//Display image from accessIncorrect1 to DOM
 function displayIncorrect1(incorrectCharacterData) {
   let li = document.createElement('li');
   li.className = 'circle';
