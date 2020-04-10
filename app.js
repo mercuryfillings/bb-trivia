@@ -6,6 +6,7 @@ const WRONG_ANSWER_URL = `character/random`;
 let CORRECT_URL = ``;
 let playerAnswer = ``;
 let previousQuotes = [];
+let currentAnswers = [];
 
 document.querySelector('.start').addEventListener('click', onClick);
 
@@ -28,9 +29,11 @@ function accessQuote(response) {
   correctAnswer = quote[0].author;
   let record = (quote[0].quote_id);
   if (previousQuotes.includes(record)) {
+    clearBoard();
     fetchQuote();
   }
   previousQuotes.push(record);
+  console.log(previousQuotes)
   if (correctAnswer === 'Jimmy McGill') {
     correctAnswer = 'Saul Goodman'
   } else if (correctAnswer === 'Gus Fring') {
@@ -59,6 +62,15 @@ function displayQuote(quote) {
 
 function accessCorrect(response) {
   let correctCharacterData = response.data;
+  let record = correctCharacterData[0].name;
+  if (currentAnswers.includes(record)) {
+    currentAnswers = [];
+    clearBoard();
+    fetchWrongAnswer1();
+    return;
+  }
+  currentAnswers.push(record);
+  console.log(currentAnswers);
   displayCorrect(correctCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
@@ -78,11 +90,20 @@ function displayCorrect(correctCharacterData) {
 
 function accessIncorrect1(response) {
   let incorrectCharacterData = response.data;
+  let record = incorrectCharacterData[0].name;
+  if (currentAnswers.includes(record)) {
+    currentAnswers = [];
+    clearBoard();
+    fetchWrongAnswer1();
+    return;
+  }
+  currentAnswers.push(record);
   displayIncorrect1(incorrectCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
 
 function displayIncorrect1(incorrectCharacterData) {
+  let record = incorrectCharacterData[0].name;
   let li = document.createElement('li');
   li.className = 'circle';
   let img = document.createElement('img');
@@ -95,11 +116,20 @@ function displayIncorrect1(incorrectCharacterData) {
 
 function accessIncorrect2(response) {
   let incorrectCharacterData = response.data;
+  let record = (incorrectCharacterData[0].name);
+  if (currentAnswers.includes(record)) {
+    currentAnswers = [];
+    clearBoard();
+    fetchWrongAnswer1();
+    return;
+  }
+  currentAnswers.push(record);
   displayIncorrect2(incorrectCharacterData);
   // let correctName = correctCharacter[0].name; //Figure out how to overlay in CSS post MVP
 }
 
 function displayIncorrect2(incorrectCharacterData) {
+  let record = (incorrectCharacterData[0].name);
   let li = document.createElement('li');
   li.className = 'circle';
   let img = document.createElement('img');
@@ -160,6 +190,7 @@ function applyAnswerListener() {
 
 function answerClick(e) {
   e.preventDefault();
+  currentAnswers = [];
   let targetElement = event.target;
   let lives = document.querySelector('.lives');
   let score = document.querySelector('.score').textContent;
