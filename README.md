@@ -1,5 +1,5 @@
 ### Breaking Bad Quote Trivia
-Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user answers 5 questions correctly, they win. If user answers 5 incorrectly, they lose.
+Shows a quote from Breaking Bad, and presents 3 character photos for user to select. If user answers 5 questions correctly, they win. If user answers 3 incorrectly, they lose.
 - **API**: https://breakingbadapi.com/documentation
 - **API Snippet**: 
 
@@ -52,21 +52,22 @@ Character:
 
 **Wireframe:** https://wireframe.cc/DSETuV
 
-| Task          | Time Estimate | 
-| ------------- |:-------------:|
-| HTML          | 2 hrs | 
-| CSS           | 4 hrs |   
-| Display quote | 4 hrs |  
-| Display correct answer image + character name | 4 hrs |
-| Display random character images + character names | 4 hrs |
-| Play actions / score tally | 4 hrs |
-| Scoring system | 3 hrs |
-| Reset button | 2 hrs | 
-| Win / Loss states | 2 hrs |
-| Repetition prevention | 4 hrs |
+| Task          | Time Estimate | Actual Time |
+| ------------- |:-------------:|:------------:|
+| HTML          | 2 hrs | 2 hrs|
+| CSS           | 4 hrs | 6 hrs |
+| Display quote | 4 hrs | 6 hrs |
+| Display correct answer image + character name | 4 hrs | 6 hrs |
+| Display random character images + character names | 3 hrs | 6 hrs |
+| Play actions / score tally | 4 hrs | 2 hrs |
+| Scoring system | 3 hrs | 1 hr | 
+| Reset button | 2 hrs | 5 min |
+| Win / Loss states | 2 hrs | 3 hrs |
+| Repetition prevention | 4 hrs | 1 hr |
 | Bug hunting | 3 hrs |
 
 Total Time Estimate: 36 hours
+Totsl Time: 33 hrs
 
 ### Goals
 * Day 1) Build out the html and CSS to display the game, test basic API functionality with console logs
