@@ -90,3 +90,59 @@ https://git.generalassemb.ly/mercuryfillings/breaking-bad-quote-game/blob/master
 3) Share score buttons
 4) Countdown clock
 5) Endless mode - 1 wrong stops game, see if you can get a streak.
+
+###Code Snippet!
+```
+function answerClick(e) {
+  e.preventDefault();
+  currentAnswers = [];
+  let targetElement = event.target;
+  let lives = document.querySelector('.lives');
+  let score = document.querySelector('.score').textContent;
+  let parent = targetElement.parentElement;
+  console.log(parent);
+  score = parseInt(score);
+  console.log(score);
+  if (targetElement.className === 'correct') {
+    console.log("right");
+    parent.className = 'green-circle';
+    score++;
+    document.querySelector('.score').textContent = score;
+    checkWinLoss();
+  } else {
+    console.log("wrong");
+    parent.className = 'red-circle';
+    targetElement.id = 'red';
+    lives.removeChild(lives.children[0]);
+    checkWinLoss();
+  }
+}
+
+function checkWinLoss() {
+  let lives = document.querySelector('.lives');
+  let score = document.querySelector('.score').textContent;
+  score = parseInt(score)
+  if (score >= 5) {
+    clearAll();
+    const winMsg = document.querySelector('h1');
+    winMsg.textContent = 'YOU WIN';
+    winMsg.className = 'win';
+  } else if (lives.children.length === 0) {
+    clearAll();
+    const loseMsg = document.querySelector('h1');
+    loseMsg.textContent = 'YOU LOSE';
+    loseMsg.className = 'loss';
+  } else setTimeout(playRound, 900);
+}
+
+function shuffle() {
+  let rando = Math.floor(Math.random() * Math.floor(5));
+  for (let i = 1; i <= rando; i++) {
+    let position = document.querySelector('.answerbox');
+    position.appendChild(position.firstChild);
+  }
+}
+```
+
+### Changes from MVP?
+Not many! I executed this pretty much as I laid out in the document, save for some styling differences on the desktop version. Deduplication of quotes and answer choices was not in the MVP, but it became pretty obvious that it was necessary. Had to come up with a real hacky version of the current answer dedup, though.
