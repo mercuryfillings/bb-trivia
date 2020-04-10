@@ -127,14 +127,22 @@ async function fetchWrongAnswer2() {
 
 function playRound() {
   if (document.querySelector('.answerbox').hasChildNodes()) {
-    clearScreen()
+    clearBoard()
   }
   fetchQuote();
 }
 
-function clearScreen() {
+function clearBoard() {
   const parent = document.querySelector('.answerbox');
   parent.querySelectorAll('*').forEach(n => n.remove())
+}
+
+function clearAll() {
+  const quote = document.querySelector('.quotebox');
+  quote.remove();
+  const hud = document.querySelector('.hud');
+  hud.remove();
+  clearBoard();
 }
 
 function applyAnswerListener() {
@@ -170,16 +178,16 @@ function checkWinLoss() {
   let score = document.querySelector('.score').textContent;
   score = parseInt(score)
   if (score >= 5) {
-    clearScreen();
+    clearAll();
     const winMsg = document.querySelector('h1');
     winMsg.textContent = 'YOU WIN';
     winMsg.className = 'win';
   } else if (lives.hasChildNodes() != true) {
-    clearScreen();
+    clearAll();
     const loseMsg = document.querySelector('h1');
     loseMsg.textContent = 'YOU LOSE';
     loseMsg.className = 'loss';
-  } else setTimeout(playRound, 1500);
+  } else setTimeout(playRound, 900);
 }
 
 function shuffle() {
