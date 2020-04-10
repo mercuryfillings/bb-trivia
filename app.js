@@ -66,7 +66,8 @@ function accessCorrect(response) {
   if (currentAnswers.includes(record)) {
     currentAnswers = [];
     clearBoard();
-    fetchWrongAnswer1();
+    fetchQuote();
+    console.log('accessCorrect')
     return;
   }
   currentAnswers.push(record);
@@ -94,7 +95,8 @@ function accessIncorrect1(response) {
   if (currentAnswers.includes(record)) {
     currentAnswers = [];
     clearBoard();
-    fetchWrongAnswer1();
+    fetchQuote();
+    console.log("AccessIncorrect1")
     return;
   }
   currentAnswers.push(record);
@@ -120,7 +122,8 @@ function accessIncorrect2(response) {
   if (currentAnswers.includes(record)) {
     currentAnswers = [];
     clearBoard();
-    fetchWrongAnswer1();
+    fetchQuote();
+    console.log("accessIncorrect 2")
     return;
   }
   currentAnswers.push(record);
@@ -165,6 +168,7 @@ function playRound() {
   if (document.querySelector('.answerbox').hasChildNodes()) {
     clearBoard()
   }
+  currentAnswers = [];
   fetchQuote();
 }
 
@@ -194,15 +198,20 @@ function answerClick(e) {
   let targetElement = event.target;
   let lives = document.querySelector('.lives');
   let score = document.querySelector('.score').textContent;
+  let parent = targetElement.parentElement;
+  console.log(parent);
   score = parseInt(score);
   console.log(score);
   if (targetElement.className === 'correct') {
     console.log("right");
+    parent.className = 'green-circle';
     score++;
     document.querySelector('.score').textContent = score;
     checkWinLoss();
   } else {
     console.log("wrong");
+    parent.className = 'red-circle';
+    targetElement.id = 'red';
     lives.removeChild(lives.children[0]);
     checkWinLoss();
   }
