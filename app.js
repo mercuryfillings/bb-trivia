@@ -163,11 +163,9 @@ function answerClick(e) {
     console.log("right");
     score++;
     document.querySelector('.score').textContent = score;
-    checkWinLoss()
-
+    checkWinLoss();
   } else {
     console.log("wrong");
-    console.log(lives.children)
     lives.removeChild(lives.children[0]);
     checkWinLoss();
   }
@@ -182,7 +180,7 @@ function checkWinLoss() {
     const winMsg = document.querySelector('h1');
     winMsg.textContent = 'YOU WIN';
     winMsg.className = 'win';
-  } else if (lives.hasChildNodes() != true) {
+  } else if (lives.children.length === 0) {
     clearAll();
     const loseMsg = document.querySelector('h1');
     loseMsg.textContent = 'YOU LOSE';
