@@ -5,6 +5,7 @@ const QUOTE_URL = `quote/random`;
 const WRONG_ANSWER_URL = `character/random`;
 let CORRECT_URL = ``;
 let playerAnswer = ``;
+let previousQuotes = [];
 
 document.querySelector('.start').addEventListener('click', onClick);
 
@@ -25,6 +26,11 @@ function accessQuote(response) {
   let quote = response.data;
   console.log(quote[0].quote)
   correctAnswer = quote[0].author;
+  let record = (quote[0].quote_id);
+  if (previousQuotes.includes(record)) {
+    fetchQuote();
+  }
+  previousQuotes.push(record);
   if (correctAnswer === 'Jimmy McGill') {
     correctAnswer = 'Saul Goodman'
   } else if (correctAnswer === 'Gus Fring') {
