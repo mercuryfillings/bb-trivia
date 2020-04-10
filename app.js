@@ -152,7 +152,7 @@ function displayIncorrect2(incorrectCharacterData) {
   incorrectContent.appendChild(li);
 }
 
-//Dedup still a work in progress - for now, janky quote reset solution in place
+//Dedup still a work in progress - for now, janky quote reset solution in place. Code below unused.
 function accessDedup() {
   let dedupData = response.data;
   let record = (dedupData[0].name);
